@@ -1,0 +1,12 @@
+PREFIX,ONTOLOGY URL
+fibo-fbo,https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/
+fibo-adr,https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/
+fibo-av,https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/
+fibo-countries,https://spec.edmcouncil.org/fibo/ontology/FND/Places/Countries/
+cmns-loc,https://www.omg.org/spec/Commons/Locations/
+wgs84_pos,http://www.w3.org/2003/01/geo/wgs84_pos#
+dcterms,http://purl.org/dc/terms/
+csvw,http://www.w3.org/ns/csvw#
+fibo-cb,https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/
+cmns-id,https://www.omg.org/spec/Commons/Identifiers/
+cmns-cls,https://www.omg.org/spec/Commons/Classifiers/

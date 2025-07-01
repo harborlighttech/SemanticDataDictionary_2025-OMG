@@ -1,0 +1,48 @@
+Column,Label,Comment,Definition,Attribute,attributeOf,Unit,Format,Time,Entity,Role,Relation,inRelationTo,wasDerivedFrom,wasGeneratedBy,Template
+X,,,ArcGIS field that duplicates LONGITUDE,skipping,,,,,,,,,,,id-{id}
+Y,,,ArcGIS field that duplicates LATITUDE,skipping,,,,,,,,,,,wt1-{id}
+OBJECTID,,,Row Number in the CSV file,(fibo-fbo:Branch) < csvw:describes (csvw:Row) < csvw:row (csvw:Table) > csvw:tableSchema (csvw:Schema) >csvw:primaryKey,??branch,,,,,,,,,,wt2-{id}
+ACQDATE,,,Date the branch was acquired by the parent organization,fibo-fnd-dt-fd:hasAcquisitionDate,??branch,,,,,,,,,,age-{id}
+ADDRESS,,,Street Address #1 of the Branch,fibo-adr:hasAddressLine1,??street,,,,,,,,,,sex-{id}
+ADDRESS2,,,Street Address #2 of the Branch,fibo-adr:hasAddressLine2,??street,,,,,,,,,,race-{id}
+BKCLASS,,,The parent institution class (CODELIST),cmns-id:isClassifiedBy (filter on FDIC FI classification scheme),??corp,,,,,,,,,,edu-{id}
+CBSA,,,The name of the Core-Based Statistical Area for the Branch,,,,,,,,,,,,smoke-{id}
+CBSA_DIV,,,"The name of the ""Metropolitan Division"", if one exists, of a ""Metropolitan Statistical Area""",,,,,,,,,,,,subject-{id}
+CBSA_DIV_FLG,,,"Whether a ""Metropolitan Division"" exists",,,,,,,,,,,,study-{id}
+CBSA_DIV_NO,,,"The CBSA ID of the ""Metropolitan Division""",,,,,,,,,,,,
+CBSA_METRO,,,"The CBSA ID of the ""Metropolitan Statistical Area""",,,,,,,,,,,,
+CBSA_METRO_FLG,,,"Whether a ""Metropolitan Statistical Area"" exists",,,,,,,,,,,,
+CBSA_METRO_NAME,,,"The name of the ""Metropolitan Statistical Area""",,,,,,,,,,,,
+CBSA_MICRO_FLG,,,"Whether the CBSA is a ""Micropolitan Statistical Area""",,,,,,,,,,,,
+CBSA_NO,,,The CBSA ID of the corresponding Core-Based Statistical Area for the Branch,,,,,,,,,,,,
+CERT,,,"The FDIC Certificate # issued to the branch's parent ""Financial Institution""",(fibo-fbo:Branch) > cmns-col:isPartOf (Corporation) > cmns-id:isIdentifiedBy (filter on FDIC FI cert id),,,,,,,,,,,
+CITY,,,The city of the Branch,fibo-adr:hasCityName,??address,,,,,,,,,,
+COUNTY,,,The county in which the city is a part of,rdfs:label,??county,,,,,,,,,,
+CSA,,,"The ""Combined Statistical Area"" that the CBSA is a part of, if it exists",,,,,,,,,,,,
+CSA_FLG,,,Whether the CSA exists,,,,,,,,,,,,
+CSA_NO,,,"The CSA ID of the corresponding ""Combined Statistical Area""",,,,,,,,,,,,
+ESTYMD,,,"The Branch Established Date (granularity = year, month, day)",fibo-be-corp-corp:hasDateOfRegistration,??branch,,,,,,,,,,
+FI_UNINUM,,,"The FDIC Unique Number of the branch's parent ""Financial Institution""",cmns-id:isIdentifiedBy (filter on FDIC FI scheme),??corp,,,,,,,,,,
+ID,,,An ArcGIS duplicate of OBJECTID,,,,,,,,,,,,
+LATITUDE,,,The latitude where the Branch is located,wgs84_pos:lat,??branch,,,,,,,,,,
+LONGITUDE,,,The longitude where the Branch is located,wgs84_pos:long,??branch,,,,,,,,,,
+MAINOFF,,,A boolean specifying if FI_UNIMUM == UNINUM (is this branch the main office),,,,,,,,,,,,
+MDI_STATUS_CODE,,,"The FDIC-assigned Minority Depository Institution code assigned to the parent ""FInancial Institution""",(fibo-fbo:Branch) >  cmns-cls:isClassifiedBy (filter on isDefinedIn MDI scheme)(cmns-cls:Classifier) > fibo-fnd-rel-rel:hasTag,,,,,,,,,,,
+MDI_STATUS_DESC,,,"The description of FDIC-assigned Minority Depository Institution code assigned to the parent ""FInancial Institution""",(fibo-fbo:Branch) >  cmns-cls:isClassifiedBy (filter on isDefinedIn MDI scheme)(cmns-cls:Classifier) > rdfs:label,,,,,,,,,,,
+NAME,,,"The legal name of the parent ""Financial Institution""",rdfs:label,??corp,,,,,,,,,,
+OFFNAME,,,The name of the Branch,rdfs:label,??branch,,,,,,,,,,
+OFFNUM,,,The FDIC-assigned branch number (seems to be a counter 0..x),cmns-id:isIdentifiedBy (filter on FDIC branch number scheme),??branch,,,,,,,,,,
+RUNDATE,,,"The date which this branch information on a particular row was ""gathered/collected""?",dct:modified,??branch,,,,,,,,,,
+SERVTYPE,,,"The FDIC-assigned ""Service Type Code""",(fibo-fbo:Branch) >  cmns-cls:isClassifiedBy (filter on isDefinedIn service type scheme)(cmns-cls:Classifier) > fibo-fnd-rel-rel:hasTag,,,,,,,,,,,
+SERVTYPE_DESC,,,"The description of the FDIC-assigned ""Service Type Code""",(fibo-fbo:Branch) >  cmns-cls:isClassifiedBy (filter on isDefinedIn service type scheme)(cmns-cls:Classifier) > rdfs:label,,,,,,,,,,,
+STALP,,,The abbreviation of the state in which the branch is located,fibo-av:abbreviation,??state,,,,,,,,,,
+STCNTY,,,The County FIPS code (5-digits),cmns-id:isIdentifiedBy (filter on FIPS scheme),??county,,,,,,,,,,
+STNAME,,,The name of the state/region for the Branch,rdfs:label,??state,,,,,,,,,,
+UNINUM,,,The FDIC Unique Number of the Branch,cmns-id:isIdentifiedBy (filter on FDIC scheme),??branch,,,,,,,,,,
+ZIP,,,The postal code for the address of the Branch,fibo-adr:hasPostalCode,??address,,,,,,,,,,
+??branch,,,,,,,,,fibo-fbo:Branch,,,,,,
+??address,,,,,,,,,fibo-adr:PhysicalAddress,,fibo-adr:hasAddress,??branch,,,
+??corp,,,,,,,,,fibo-cb:Corporation,,cmns-col:isPartOf ,??branch,,,
+??county,,,,,,,,,cmns-loc:County,,cmns-loc:hasCounty ,??address,,,
+??street,,,,,,,,,fibo-adr:ConventionalStreetAddress,,fibo-adr:hasStreetAddress,??address,,,
+??state,,,,,,,,,cmns-loc:FederalState,,cmns-loc:hasSubdivision,??address,,,

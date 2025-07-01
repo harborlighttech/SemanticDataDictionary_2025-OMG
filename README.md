@@ -1,3 +1,5 @@
+python3 sdd2rdf/sdd2rdf.py 2025-OMG/config/config.ini
+
 # SemanticDataDictionary
 Tools and specifications for Semantic Data Dictionaries
 
